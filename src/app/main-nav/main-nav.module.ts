@@ -51,11 +51,8 @@ import {
   EditNotesComponent,
   EditPlansComponent,
   DialogPopupComponent,
-  JournalComponent,
-  SignUpComponent,
-  SignUpDialogComponent,
+  JournalComponent
 } from '../components';
-import {SignUpRoutingModule} from "../components/sign-up/sign-up-routing.module";
 
 const components = [
   AuthComponent,
@@ -77,7 +74,6 @@ const components = [
   ChangeNotesComponent,
   ChangeMissesComponent,
   JournalComponent,
-  SignUpComponent
 ];
 
 @NgModule({
@@ -112,11 +108,10 @@ const components = [
     EditorModule,
     PreloadingSpinnerModule,
     MatStepperModule,
-    MatTableModule,
-    SignUpRoutingModule
+    MatTableModule
   ],
   exports: [MainNavComponent],
-  entryComponents: [DialogPopupComponent, SignUpDialogComponent]
+  entryComponents: [DialogPopupComponent]
 })
 export class MainNavModule {
 }

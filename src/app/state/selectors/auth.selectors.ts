@@ -1,4 +1,4 @@
-import { State } from './../state/state';
+import { State } from '../state';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 export const getAuth = createFeatureSelector('auth');

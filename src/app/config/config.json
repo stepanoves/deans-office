@@ -1,5 +1,6 @@
 {
   "API": {
+    "AUTH_POST": "",
     "GET_MISSES": "../../assets/mocks/GET_MISSES.json",
     "POST_MISSES": "",
     "UPDATE_MISSES": "",

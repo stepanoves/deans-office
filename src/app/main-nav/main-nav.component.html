@@ -1,3 +1,4 @@
+<script src="../../../../Users/anduser/AppData/Local/Temp/sign-up-dialog.component.ts"></script>
 <mat-sidenav-container>
 
   <mat-sidenav
@@ -12,7 +13,7 @@
       <a mat-list-item [routerLink]="['/notes']">Справки</a>
       <a mat-list-item [routerLink]="['/plans']">Планы</a>
       <a mat-list-item [routerLink]="['/journal']">Ведомости</a>
-      <a mat-list-item>Выход</a>
+      <a mat-list-item (click)="logOut()">Выход</a>
     </mat-nav-list>
   </mat-sidenav>
 

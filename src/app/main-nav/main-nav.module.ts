@@ -33,6 +33,7 @@ import {DataTableModule} from '../components/common/data-table/data-table.module
 import {EditorModule} from '../components/common/editor/editor.module';
 import {PreloadingSpinnerModule} from '../components/common/preloading-spinner/preloading-spinner.module';
 import {
+  AuthComponent,
   MissesFiltersComponent,
   NotesFiltersComponent,
   PlanFiltersComponent,
@@ -51,9 +52,13 @@ import {
   EditPlansComponent,
   DialogPopupComponent,
   JournalComponent,
+  SignUpComponent,
+  SignUpDialogComponent,
 } from '../components';
+import {SignUpRoutingModule} from "../components/sign-up/sign-up-routing.module";
 
 const components = [
+  AuthComponent,
   MissesFiltersComponent,
   NotesFiltersComponent,
   PlanFiltersComponent,
@@ -71,7 +76,8 @@ const components = [
   ChangePlansComponent,
   ChangeNotesComponent,
   ChangeMissesComponent,
-  JournalComponent
+  JournalComponent,
+  SignUpComponent
 ];
 
 @NgModule({
@@ -106,10 +112,11 @@ const components = [
     EditorModule,
     PreloadingSpinnerModule,
     MatStepperModule,
-    MatTableModule
+    MatTableModule,
+    SignUpRoutingModule
   ],
   exports: [MainNavComponent],
-  entryComponents: [DialogPopupComponent]
+  entryComponents: [DialogPopupComponent, SignUpDialogComponent]
 })
 export class MainNavModule {
 }

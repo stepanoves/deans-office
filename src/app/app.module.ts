@@ -22,6 +22,11 @@ import {
   PlansEffects,
   JournalEffects
 } from './state/effects';
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {TokenInterceptor} from "./interceptors/token.interceptor";
+import {TokenExpiredInterceptor} from "./interceptors/token-expired.interceptor";
+import {AuthEffects} from "./state/effects/auth.effects";
+import {authReducer} from "./state/reducers/auth.reducers";
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,17 +40,31 @@ import {
       misses: missesReducer,
       notes: notesReducer,
       plans: plansReducer,
-      journal: journalReducer
+      journal: journalReducer,
+      auth: authReducer,
     }),
     EffectsModule.forRoot([
       AppEffects,
       MissesEffects,
       NotesEffects,
       PlansEffects,
-      JournalEffects
+      JournalEffects,
+      AuthEffects
     ])
   ],
-  providers: [{provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenExpiredInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

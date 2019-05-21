@@ -2,6 +2,15 @@ import { LoadGroups, LoadDepartments, LoadStudents, LoadTeachers, LoadSubjects }
 import {Notes} from '../state/models/notes.model';
 import {Misses} from '../state/models/misses.model';
 import {Load} from '../state/actions/plan.actions';
+import {HttpHeaders} from "@angular/common/http";
+
+export const lsTokenName = 'currentUser';
+
+export const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
 
 export const popupConfig = {
   add: {

@@ -28,6 +28,7 @@ export interface State {
   readonly teachers: Teacher[];
   readonly subjects: Subject[];
   readonly headerMenuVisible: boolean;
+  readonly authError: Error;
 }
 
 export const initialState: State = {
@@ -45,5 +46,6 @@ export const initialState: State = {
   teachers: [],
   subjects: [],
   journal: null,
-  headerMenuVisible: true
+  headerMenuVisible: true,
+  authError: null,
 };

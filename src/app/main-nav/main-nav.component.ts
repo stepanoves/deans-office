@@ -1,10 +1,10 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import {State} from "../state/state";
 import {Store} from "@ngrx/store";
 import {getMenuVisible} from "../state/selectors/app.selectors";
+import {Router} from "@angular/router";
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-main-nav',
@@ -16,6 +16,15 @@ export class MainNavComponent {
 
   public headerMenuVisible$ = this.store.select(getMenuVisible);
 
-  constructor(private breakpointObserver: BreakpointObserver, private store: Store<State>) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private store: Store<State>,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
+  logOut() {
+    this.authService.logOut();
+    this.router.navigateByUrl('auth');
+  }
 }

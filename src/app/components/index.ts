@@ -5,5 +5,3 @@ export * from './plans';
 export * from './notes';
 export * from './header-menu';
 export * from './auth';
-export * from './sign-up';
-export * from './sign-up-dialog';

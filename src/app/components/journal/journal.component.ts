@@ -1,14 +1,15 @@
 import {ChangeDetectionStrategy, Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {getGroupPlans, getPlanSubjects} from '../../state/selectors/plan.selectors';
-import {State} from '../../state/state';
 import {Store} from '@ngrx/store';
+
+import {State} from '../../state/state';
 import {dispatchLoadAction} from '../../utils/utils';
 import {getGroups} from '../../state/selectors/app.selectors';
 import * as planActions from '../../state/actions/plan.actions';
 import * as journalActions from '../../state/actions/journal.actions';
-import {getJournal} from '../../state/selectors/journal.selectors';
 import * as appActions from '../../state/actions/app.actions';
+import {getJournal} from '../../state/selectors/journal.selectors';
 
 @Component({
   selector: 'app-journal',

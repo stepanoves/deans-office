@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {FormGroup} from '@angular/forms';
 
@@ -30,15 +30,10 @@ import {FormGroup} from '@angular/forms';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FiltersComponent implements OnInit {
+export class FiltersComponent {
 
   @Input('filters') filters: FormGroup;
   public isOpen = false;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   public resetFilters(): void {
     this.filters.reset();

@@ -1,8 +1,8 @@
-import { LoadGroups, LoadDepartments, LoadStudents, LoadTeachers, LoadSubjects } from './../state/actions/app.actions';
-import {Notes} from '../state/models/notes.model';
-import {Misses} from '../state/models/misses.model';
-import {Load} from '../state/actions/plan.actions';
 import {HttpHeaders} from "@angular/common/http";
+
+import {LoadDepartments, LoadGroups, LoadStudents, LoadSubjects, LoadTeachers} from '../state/actions/app.actions';
+import {Misses, Notes} from '../state/models';
+import {Load} from '../state/actions/plan.actions';
 
 export const lsTokenName = 'currentUser';
 
@@ -90,9 +90,5 @@ export interface Column {
   cell(col): any;
 }
 
-export enum StreamTypes {
-  misses,
-  notes
-}
 export type ModelType = Notes | Misses;
 

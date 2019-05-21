@@ -8,15 +8,9 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
-import {
-  ControlValueAccessor,
-  FormControl,
-  NG_VALUE_ACCESSOR,
-  Validators
-} from '@angular/forms';
-import { MatSelect, PageEvent } from '@angular/material';
-import { Observable } from 'rxjs';
-import {filter} from "rxjs/operators";
+import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators} from '@angular/forms';
+import {MatSelect, PageEvent} from '@angular/material';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-search-select',
@@ -44,12 +38,12 @@ export class SearchSelectComponent implements OnInit, ControlValueAccessor {
   @Input('dependency') dependency: FormControl;
   @Input('defaultSelectValue') defaultSelectValue: number;
   @ViewChild('search') searchField: ElementRef;
-  currentPageIndex = 0;
-  pageSize = 5;
+  public currentPageIndex = 0;
+  public pageSize = 5;
 
   constructor(private cdr: ChangeDetectorRef) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     if (this.defaultSelectValue) {
       this.select.setValue(this.defaultSelectValue);
       this.select.updateValueAndValidity();
@@ -66,11 +60,11 @@ export class SearchSelectComponent implements OnInit, ControlValueAccessor {
 
   public propagateChange = (val: any) => {};
 
-  setFocus() {
+  public setFocus() {
     this.searchField.nativeElement.focus();
   }
 
-  optionSelect(data) {
+  public optionSelect(data): void {
     if (this.dependency) {
       if (data instanceof Object) {
         this.dependency.enable();
@@ -83,23 +77,26 @@ export class SearchSelectComponent implements OnInit, ControlValueAccessor {
     this.filter.setValue('');
   }
 
-  onPaginateChange(event: PageEvent) {
+  public onPaginateChange(event: PageEvent): void {
     this.currentPageIndex = event.pageIndex * this.pageSize;
   }
 
-  writeValue(obj: any): void {
+  public writeValue(obj: any): void {
     if (obj === null) {
       this.select.reset();
     }
     this.select.patchValue(obj);
   }
-  registerOnChange(fn: any): void {
+
+  public registerOnChange(fn: any): void {
     this.propagateChange = fn;
   }
-  registerOnTouched(fn: any): void {
+
+  public registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
-  setDisabledState(isDisabled: boolean): void {
+
+  public setDisabledState(isDisabled: boolean): void {
     if (isDisabled) {
       this.select.disable();
     } else {

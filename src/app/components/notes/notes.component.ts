@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 
 import {State} from '../../state/state';
@@ -9,7 +9,8 @@ import {getNotes} from '../../state/selectors/notes.selectors';
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
-  styleUrls: ['./notes.component.scss']
+  styleUrls: ['./notes.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NotesComponent implements OnInit {
   public notesActions = notesActions;

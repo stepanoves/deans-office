@@ -1,8 +1,9 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
+import {Router} from '@angular/router';
+
 import {State} from '../../state/state';
 import {Column} from '../../constants/constants';
-import {Router} from '@angular/router';
 import * as planActions from '../../state/actions/plan.actions';
 import {getGroupPlans, getPlanSubjects} from '../../state/selectors/plan.selectors';
 import {FormBuilder, FormGroup} from '@angular/forms';
@@ -31,7 +32,7 @@ export class PlansComponent implements OnInit {
     private formBuilder: FormBuilder
   ) { }
 
-  ngOnInit() {
+  public ngOnInit(): void {
     this.store.dispatch(new planActions.LoadPlanSubjects());
     this.store.dispatch(new planActions.Load());
     this.columns = [

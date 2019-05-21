@@ -1,9 +1,10 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import {State} from "../state/state";
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {BreakpointObserver} from '@angular/cdk/layout';
 import {Store} from "@ngrx/store";
-import {getMenuVisible} from "../state/selectors/app.selectors";
 import {Router} from "@angular/router";
+
+import {State} from "../state/state";
+import {getMenuVisible} from "../state/selectors/app.selectors";
 import {AuthService} from "../services/auth.service";
 
 @Component({
@@ -23,7 +24,7 @@ export class MainNavComponent {
     private authService: AuthService
   ) {}
 
-  logOut() {
+  public logOut(): void {
     this.authService.logOut();
     this.router.navigateByUrl('auth');
   }

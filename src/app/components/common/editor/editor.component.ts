@@ -59,9 +59,6 @@ export class EditorComponent implements OnInit, OnDestroy {
   public update(): void {
     this.store.dispatch(new this.editAction(this.currentItemId, this.editorForm.value));
   }
-  // public removeItem(index: number): void {
-  //   this.store.dispatch(new this.actions.RemoveItem(index));
-  // }
 
   public editItem(item: any): void {
     this.currentItemId = item.id;

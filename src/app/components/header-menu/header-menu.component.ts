@@ -1,9 +1,9 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {Router} from '@angular/router';
 
 import {popupConfig} from '../../constants/constants';
-import {DialogPopupComponent} from './dialogs-forms/diaolog-popup/dialog-popup.component';
+import {DialogPopupComponent} from './dialogs-forms/diaolog-popup';
 
 @Component({
   selector: 'app-header-menu',
@@ -12,18 +12,17 @@ import {DialogPopupComponent} from './dialogs-forms/diaolog-popup/dialog-popup.c
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderMenuComponent {
-  @Output() visible: EventEmitter<any> = new EventEmitter();
 
   constructor(public dialog: MatDialog, private router: Router) {}
 
-  openAddDialog(): void {
+  public openAddDialog(): void {
     this.insidePopupNavigate('add');
     const dialogRef = this.dialog.open(DialogPopupComponent, popupConfig.add);
 
     this.afterClosed(dialogRef);
   }
 
-  openEditDialog(): void {
+  public openEditDialog(): void {
     this.insidePopupNavigate('change');
     const dialogRef = this.dialog.open(DialogPopupComponent, popupConfig.change);
 

@@ -1,10 +1,5 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  ChangeDetectionStrategy
-} from "@angular/core";
-import { Observable } from "rxjs";
+import {ChangeDetectionStrategy, Component, Input} from "@angular/core";
+import {Observable} from "rxjs";
 
 @Component({
   selector: "app-preloading-spinner",

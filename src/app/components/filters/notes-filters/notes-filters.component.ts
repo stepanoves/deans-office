@@ -1,9 +1,10 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { dispatchLoadAction } from '../../../utils/utils';
-import { getGroups, getStudents } from '../../../state/selectors/app.selectors';
-import { Store } from '@ngrx/store';
-import { State } from '../../../state/state';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {Store} from '@ngrx/store';
+import {State} from '../../../state/state';
+
+import {dispatchLoadAction} from '../../../utils/utils';
+import {getGroups, getStudents} from '../../../state/selectors/app.selectors';
 
 @Component({
   selector: 'app-notes-filters',

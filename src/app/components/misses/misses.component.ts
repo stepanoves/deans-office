@@ -1,6 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import {Action, Store} from '@ngrx/store';
-import {Column, StreamTypes} from '../../constants/constants';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Store} from '@ngrx/store';
+
+import {Column} from '../../constants/constants';
 import * as missesActions from '../../state/actions/misses.actions';
 import {getMisses} from '../../state/selectors/misses.selectors';
 import {State} from '../../state/state';

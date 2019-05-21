@@ -5,5 +5,5 @@ export const journal = createFeatureSelector('journal');
 
 export const getJournal = createSelector(
   journal,
-  (state: State) => state.journal
+  (state: State) => state.journal,
 );

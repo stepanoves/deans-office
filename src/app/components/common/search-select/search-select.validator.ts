@@ -1,9 +1,9 @@
-import { AbstractControl } from "@angular/forms";
+import { AbstractControl } from '@angular/forms';
 
 export function searchSelectValidator(control: AbstractControl) {
   if (!(control.value instanceof Object)) {
     return {
-      required: true
+      required: true,
     };
   }
 

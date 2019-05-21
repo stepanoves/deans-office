@@ -17,10 +17,10 @@
     <app-preloading-spinner [dataStream]="dataStream$"></app-preloading-spinner>
     <mat-option
       *ngFor="
-        let option of (dataStream$
+        let option of dataStream$
           | async
           | dataFilter: filter.value
-          | slice: currentPageIndex:currentPageIndex + pageSize)
+          | slice: currentPageIndex:currentPageIndex + pageSize
       "
       [value]="option.id"
       (click)="optionSelect(option)"

@@ -1,11 +1,11 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: "dataFilter"
+  name: 'dataFilter',
 })
 export class FilterDataPipe implements PipeTransform {
   transform(dataList, searhStr: string) {
-    if (!dataList.length || searhStr === "") {
+    if (!dataList.length || searhStr === '') {
       return dataList;
     }
 

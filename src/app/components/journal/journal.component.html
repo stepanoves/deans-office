@@ -4,33 +4,33 @@
       <ng-template matStepLabel>Выберите план</ng-template>
       <div class="container__plans">
         <div class="container__plans__search">
-                  <form [formGroup]="searchPlanForm" class="filters">
-                    <app-search-select
-                      (click)="dispatchLoadAction('LOAD_GROUPS')"
-                      [dataStream]="groups$"
-                      formControlName="group"
-                      placeholder="Группа"
-                    ></app-search-select>
+          <form [formGroup]="searchPlanForm" class="filters">
+            <app-search-select
+              (click)="dispatchLoadAction('LOAD_GROUPS')"
+              [dataStream]="groups$"
+              formControlName="group"
+              placeholder="Группа"
+            ></app-search-select>
 
-                    <mat-form-field>
-                      <mat-select placeholder="Семестр" formControlName="semester">
-                        <mat-option [value]="'осеннний'">Осенний</mat-option>
-                        <mat-option [value]="'зимний'">Зимний</mat-option>
-                      </mat-select>
-                    </mat-form-field>
+            <mat-form-field>
+              <mat-select formControlName="semester" placeholder="Семестр">
+                <mat-option [value]="'осеннний'">Осенний</mat-option>
+                <mat-option [value]="'зимний'">Зимний</mat-option>
+              </mat-select>
+            </mat-form-field>
 
-                    <mat-form-field>
-                      <input
-                    matInput
-                    placeholder="Год"
-                    formControlName="year"
-                  />
-                </mat-form-field>
-              </form>
+            <mat-form-field>
+              <input formControlName="year" matInput placeholder="Год"/>
+            </mat-form-field>
+          </form>
         </div>
 
         <div class="container__plans__cards">
-          <mat-card *ngFor="let item of (groupPlans$ | async); let i = index" [attr.data-index]="i" class="container__plans__card">
+          <mat-card
+            *ngFor="let item of groupPlans$ | async; let i = index"
+            [attr.data-index]="i"
+            class="container__plans__card"
+          >
             <div class="container__plans__info">
               <p>{{ item.group.name }}</p>
               <p>{{ item.semester }}</p>
@@ -41,7 +41,6 @@
                 <mat-icon>done</mat-icon>
               </button>
             </div>
-
           </mat-card>
         </div>
       </div>
@@ -52,9 +51,10 @@
     <div class="container__subjects">
       <mat-radio-group>
         <mat-radio-button
-          *ngFor="let planSubject of (planSubjects$ | async)"
-          [value]="planSubject.id">
-          {{ planSubject.subject.name}}
+          *ngFor="let planSubject of planSubjects$ | async"
+          [value]="planSubject.id"
+        >
+          {{ planSubject.subject.name }}
         </mat-radio-button>
       </mat-radio-group>
 
@@ -66,22 +66,27 @@
     <div class="container__marks">
       <table mat-table [dataSource]="journalForUpdate.studentMarks">
         <ng-container matColumnDef="student">
-          <th mat-header-cell *matHeaderCellDef> ФИО студента </th>
-          <td mat-cell *matCellDef="let element"> {{element.student.name}} </td>
+          <th *matHeaderCellDef mat-header-cell>ФИО студента</th>
+          <td *matCellDef="let element" mat-cell>{{ element.student.name }}</td>
         </ng-container>
 
         <ng-container matColumnDef="mark">
-          <th mat-header-cell *matHeaderCellDef> Оценка </th>
+          <th *matHeaderCellDef mat-header-cell>Оценка</th>
           <td mat-cell *matCellDef="let element; let i = index">
             <mat-form-field>
-              <input matInput value="{{element.mark}}" [(ngModel)]="journalForUpdate.studentMarks[i].mark">
+              <input
+                [(ngModel)]="journalForUpdate.studentMarks[i].mark"
+                matInput
+                value="{{ element.mark }}"
+              />
             </mat-form-field>
           </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr *matRowDef="let row; columns: displayedColumns" mat-row></tr>
       </table>
+
       <button mat-button color="primary" (click)="update()">Обновить</button>
       <button mat-button matStepperPrevious>Назад</button>
       <button mat-button (click)="stepper.reset()">Заново</button>

@@ -1,15 +1,15 @@
 import {
-  Subject,
-  Teacher,
   Department,
-  Misses,
   Filters,
   Group,
-  Student,
+  Journal,
+  Misses,
   Notes,
   Plan,
   PlanSubject,
-  Journal
+  Student,
+  Subject,
+  Teacher,
 } from './models';
 
 export interface State {

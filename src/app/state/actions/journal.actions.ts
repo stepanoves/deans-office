@@ -2,7 +2,6 @@ import { Action } from '@ngrx/store';
 
 import { Journal } from '../models';
 
-
 export enum JournalActionTypes {
   'UPDATE' = '[Journal page] Update journal',
   'UPDATE_SUCCESS' = '[Journal page] Update success journal',
@@ -15,7 +14,8 @@ export enum JournalActionTypes {
 export class Load implements Action {
   readonly type = JournalActionTypes.LOAD;
 
-  constructor(readonly payload: {planId: number; subjectId: number}) {}
+  constructor(readonly payload: { planId: number; subjectId: number }) {
+  }
 }
 
 export class LoadSuccess implements Action {
@@ -42,8 +42,4 @@ export class UpdateSuccess implements Action {
   constructor(readonly payload: Journal) {}
 }
 
-export type JournalActions =
-  | Load
-  | LoadSuccess
-  | Update
-  | UpdateSuccess;
+export type JournalActions = Load | LoadSuccess | Update | UpdateSuccess;

@@ -1,14 +1,13 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import * as config from '../config/config.json';
-import {Journal} from '../state/models';
+import { Journal } from '../state/models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class JournalService {
-
   constructor(private http: HttpClient) {
   }
 
@@ -17,6 +16,9 @@ export class JournalService {
   }
 
   updateJournal(journalId: number, journal: Journal): Observable<Journal> {
-    return this.http.put<Journal>(`${config.API.UPDATE_JOURNAL}/${journalId}`, journal);
+    return this.http.put<Journal>(
+      `${config.API.UPDATE_JOURNAL}/${journalId}`,
+      journal,
+    );
   }
 }

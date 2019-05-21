@@ -6,11 +6,11 @@ import {
   forwardRef,
   Input,
   OnInit,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
-import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators} from '@angular/forms';
-import {MatSelect, PageEvent} from '@angular/material';
-import {Observable} from 'rxjs';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
+import { MatSelect, PageEvent } from '@angular/material';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-search-select',
@@ -20,13 +20,13 @@ import {Observable} from 'rxjs';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => SearchSelectComponent),
-      multi: true
+      multi: true,
     },
     {
-      provide: MatSelect
-    }
+      provide: MatSelect,
+    },
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchSelectComponent implements OnInit, ControlValueAccessor {
   select = new FormControl('');
@@ -52,8 +52,7 @@ export class SearchSelectComponent implements OnInit, ControlValueAccessor {
     if (this.isRequired) {
       this.select.setValidators(Validators.required);
     }
-    this.select.valueChanges
-      .subscribe(value => this.propagateChange(value));
+    this.select.valueChanges.subscribe(value => this.propagateChange(value));
   }
 
   onTouched: any = () => {};

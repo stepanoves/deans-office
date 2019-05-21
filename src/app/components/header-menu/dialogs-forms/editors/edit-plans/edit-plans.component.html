@@ -30,11 +30,7 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input
-      matInput
-      placeholder="Количество часов"
-      formControlName="hours"
-    />
+    <input formControlName="hours" matInput placeholder="Количество часов"/>
   </mat-form-field>
 
   <mat-form-field>
@@ -47,5 +43,4 @@
     <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
     <mat-datepicker #date></mat-datepicker>
   </mat-form-field>
-
 </app-editor>

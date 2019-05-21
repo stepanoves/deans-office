@@ -3,14 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import * as config from '../config/config.json';
-import {PlanSubject, Plan, Notes} from '../state/models';
+import { Plan, PlanSubject } from '../state/models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class PlansService {
-
   constructor(private http: HttpClient) {}
 
   getGroupPlans(groupId: number): Observable<Plan[]> {
@@ -29,15 +27,33 @@ export class PlansService {
     return this.http.get<PlanSubject[]>(`${config.API.GET_PLAN_SUBJECTS}`);
   }
 
-  postPlanSubjects(planId: number, subject: PlanSubject): Observable<PlanSubject> {
-    return this.http.post<PlanSubject>(`${config.API.POST_PLAN_SUBJECTS}/${planId}`, subject);
+  postPlanSubjects(
+    planId: number,
+    subject: PlanSubject,
+  ): Observable<PlanSubject> {
+    return this.http.post<PlanSubject>(
+      `${config.API.POST_PLAN_SUBJECTS}/${planId}`,
+      subject,
+    );
   }
 
-  updatePlanSubjects(planId: number, subjectId: number, planSubject: PlanSubject): Observable<PlanSubject> {
-    return this.http.put<PlanSubject>(`${config.API.UPDATE_PLAN_SUBJECTS}/${planId}/${subjectId}`, planSubject);
+  updatePlanSubjects(
+    planId: number,
+    subjectId: number,
+    planSubject: PlanSubject,
+  ): Observable<PlanSubject> {
+    return this.http.put<PlanSubject>(
+      `${config.API.UPDATE_PLAN_SUBJECTS}/${planId}/${subjectId}`,
+      planSubject,
+    );
   }
 
-  deletePlanSubjects(planId: number, subjectId: number): Observable<PlanSubject> {
-    return this.http.delete<PlanSubject>(`${config.API.DELETE_PLAN_SUBJECTS}/${planId}/${subjectId}`);
+  deletePlanSubjects(
+    planId: number,
+    subjectId: number,
+  ): Observable<PlanSubject> {
+    return this.http.delete<PlanSubject>(
+      `${config.API.DELETE_PLAN_SUBJECTS}/${planId}/${subjectId}`,
+    );
   }
 }

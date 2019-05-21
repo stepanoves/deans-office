@@ -6,40 +6,40 @@ export function appReducer(state = initialState, action: AppActions) {
     case AppActionTypes.CHANGE_VISIBLE: {
       return {
         ...state,
-        headerMenuVisible: action.payload
+        headerMenuVisible: action.payload,
       };
     }
     case AppActionTypes.LOAD_GROUPS_SUCCESS: {
       return {
         ...state,
-        groups: action.payload
+        groups: action.payload,
       };
     }
     case AppActionTypes.LOAD_DEPARTMENTS_SUCCESS: {
       return {
         ...state,
-        departments: action.payload
+        departments: action.payload,
       };
     }
 
     case AppActionTypes.LOAD_STUDENTS_SUCCESS: {
       return {
         ...state,
-        students: action.payload
+        students: action.payload,
       };
     }
 
     case AppActionTypes.LOAD_TEACHERS_SUCCESS: {
       return {
         ...state,
-        teachers: action.payload
+        teachers: action.payload,
       };
     }
 
     case AppActionTypes.LOAD_SUBJECTS_SUCCESS: {
       return {
         ...state,
-        subjects: action.payload
+        subjects: action.payload,
       };
     }
 

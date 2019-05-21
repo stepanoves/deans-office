@@ -1,4 +1,3 @@
-import { getTeachers } from './state/selectors/app.selectors';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,7 +9,7 @@ import { Student } from './state/models/student.model';
 import { Subject } from './state/models/subject.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AppService {
   constructor(private httpClient: HttpClient) {}

@@ -1,19 +1,18 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Store} from '@ngrx/store';
-import {State} from '../../../../../state/state';
-import { getSubjects, getTeachers} from '../../../../../state/selectors/app.selectors';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { State } from '../../../../../state/state';
+import { getSubjects, getTeachers } from '../../../../../state/selectors/app.selectors';
 import * as plansActions from '../../../../../state/actions/plan.actions';
-import {briefInfo} from '../../../../../constants/constants';
-import {getSelectedPlanSubjects} from '../../../../../state/selectors/plan.selectors';
+import { briefInfo } from '../../../../../constants/constants';
+import { getSelectedPlanSubjects } from '../../../../../state/selectors/plan.selectors';
 
 @Component({
   selector: 'app-edit-plans',
   templateUrl: './edit-plans.component.html',
-  styleUrls: ['./edit-plans.component.scss']
+  styleUrls: ['./edit-plans.component.scss'],
 })
 export class EditPlansComponent implements OnInit {
-
   @Input() isEdit = false;
 
   public editPlansForm: FormGroup;
@@ -25,10 +24,8 @@ export class EditPlansComponent implements OnInit {
   public preDispatch = ['LOAD_SUBJECTS', 'LOAD_TEACHERS'];
   public briefInfo = briefInfo.plans;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private store: Store<State>
-  ) { }
+  constructor(private formBuilder: FormBuilder, private store: Store<State>) {
+  }
 
   public ngOnInit(): void {
     this.editPlansForm = this.formBuilder.group({
@@ -36,11 +33,9 @@ export class EditPlansComponent implements OnInit {
       teacher: [''],
       type: [''],
       hours: [''],
-      date: ['']
+      date: [''],
     });
 
     this.editPlansForm.setValidators(Validators.required);
   }
-
-
 }

@@ -1,12 +1,12 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {Store} from '@ngrx/store';
-import {State} from '../../../state/state';
-import {Observable, Subject} from 'rxjs';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { State } from '../../../state/state';
+import { Observable, Subject } from 'rxjs';
 
-import {convertJSONToObject, dispatchLoadAction, getPropertyValue} from '../../../utils/utils';
-import {takeUntil} from 'rxjs/operators';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import { convertJSONToObject, dispatchLoadAction, getPropertyValue } from '../../../utils/utils';
+import { takeUntil } from 'rxjs/operators';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-editor',
@@ -14,15 +14,17 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   styleUrls: ['./editor.component.scss'],
   animations: [
     trigger('fadeInOut', [
-      state('void', style({
-        opacity: 0
-      })),
+      state(
+        'void',
+        style({
+          opacity: 0,
+        }),
+      ),
       transition('void <=> *', animate(500)),
     ]),
-  ]
+  ],
 })
 export class EditorComponent implements OnInit, OnDestroy {
-
   @Input() isEdit = false;
   @Input() briefInfo = [];
   @Input() selected$: Observable<any>;
@@ -38,9 +40,8 @@ export class EditorComponent implements OnInit, OnDestroy {
   public isFormChanged = true;
   public getPropertyValue = getPropertyValue;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private store: Store<State>) { }
+  constructor(private formBuilder: FormBuilder, private store: Store<State>) {
+  }
 
   ngOnInit() {
     this.preDispatch.forEach(action => this.dispatchLoadAction(action));
@@ -57,7 +58,9 @@ export class EditorComponent implements OnInit, OnDestroy {
   }
 
   public update(): void {
-    this.store.dispatch(new this.editAction(this.currentItemId, this.editorForm.value));
+    this.store.dispatch(
+      new this.editAction(this.currentItemId, this.editorForm.value),
+    );
   }
 
   public editItem(item: any): void {
@@ -66,6 +69,6 @@ export class EditorComponent implements OnInit, OnDestroy {
     this.isFormChanged = true;
     this.editorForm.valueChanges
       .pipe(takeUntil(this.destroy$))
-      .subscribe(() => this.isFormChanged = false);
+      .subscribe(() => (this.isFormChanged = false));
   }
 }

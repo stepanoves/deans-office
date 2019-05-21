@@ -21,7 +21,7 @@ export enum MissesActionTypes {
   'LOAD_FAIL' = '[Misses page] Load fail misses',
   'UPDATE_SELECT' = '[Misses page] Update select misses',
   'CLEAR_SELECT' = '[Misses page] Clear select misses',
-  'UPDATE_FILTERS' = '[Misses page] Update filters misses'
+  'UPDATE_FILTERS' = '[Misses page] Update filters misses',
 }
 
 export class Load implements Action {

@@ -1,5 +1,5 @@
-import {Subject} from './subject.model';
-import {Teacher} from './teacher.model';
+import { Subject } from './subject.model';
+import { Teacher } from './teacher.model';
 
 export interface PlanSubject {
   id: number;

@@ -2,12 +2,7 @@ import { PreloadingSpinnerModule } from '../preloading-spinner/preloading-spinne
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  MatFormFieldModule,
-  MatInputModule,
-  MatPaginatorModule,
-  MatSelectModule,
-} from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatPaginatorModule, MatSelectModule } from '@angular/material';
 import { AutofocusDirective } from '../../../directives/autofocus.directive';
 import { StopPropagationDirective } from '../../../directives/stop-propagation.directive';
 import { FilterDataPipe } from '../../../pipes/filter-data.pipe';
@@ -18,7 +13,7 @@ import { SearchSelectComponent } from './search-select.component';
     SearchSelectComponent,
     AutofocusDirective,
     StopPropagationDirective,
-    FilterDataPipe
+    FilterDataPipe,
   ],
   imports: [
     CommonModule,
@@ -28,8 +23,8 @@ import { SearchSelectComponent } from './search-select.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatPaginatorModule,
-    PreloadingSpinnerModule
+    PreloadingSpinnerModule,
   ],
-  exports: [SearchSelectComponent]
+  exports: [SearchSelectComponent],
 })
 export class SearchSelectModule {}

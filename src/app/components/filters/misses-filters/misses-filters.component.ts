@@ -1,10 +1,10 @@
-import {Store} from '@ngrx/store';
-import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
-import {dispatchLoadAction} from '../../../utils/utils';
-import {getDepartments, getGroups, getStudents, getTeachers} from '../../../state/selectors/app.selectors';
-import {State} from '../../../state/state';
+import { dispatchLoadAction } from '../../../utils/utils';
+import { getDepartments, getGroups, getStudents, getTeachers } from '../../../state/selectors/app.selectors';
+import { State } from '../../../state/state';
 
 @Component({
   selector: 'app-misses-filters',
@@ -20,17 +20,14 @@ export class MissesFiltersComponent {
   public students$ = this.store.select(getStudents);
   public teachers$ = this.store.select(getTeachers);
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private store: Store<State>
-  ) {
+  constructor(private formBuilder: FormBuilder, private store: Store<State>) {
     this.filters = this.formBuilder.group({
       department: [''],
       teacher: [''],
       student: [{ value: '', disabled: true }],
       group: [''],
       dateFrom: [''],
-      dateTo: ['']
+      dateTo: [''],
     });
   }
 }

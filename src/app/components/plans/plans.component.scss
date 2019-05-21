@@ -18,7 +18,6 @@
   background: #555;
 }
 
-
 :host {
   .full-width-table {
     display: flex;
@@ -28,7 +27,6 @@
   .container {
     display: flex;
     justify-content: space-around;
-
 
     &__content {
       flex-basis: 69em;
@@ -81,7 +79,6 @@
       }
 
       mat-accordion {
-
       }
 
       form {
@@ -89,7 +86,6 @@
         flex-direction: column;
         justify-content: space-around;
       }
-
     }
   }
 }

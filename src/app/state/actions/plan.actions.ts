@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { Plan, PlanSubject} from '../models';
+import { Plan, PlanSubject } from '../models';
 
 export enum PlansActionTypes {
   'ADD_PLAN' = '[Plans page] Add plans',
@@ -28,7 +28,7 @@ export enum PlansActionTypes {
   'LOAD_PLAN_SUBJECTS_SUCCESS' = '[Plans page] Load success plan subjects',
   'LOAD_PLAN_SUBJECTS_FAIL' = '[Plans page] Load fail plan subjects',
   'UPDATE_SELECT' = '[Plans page] Update select plans',
-  'CLEAR_SELECT' = '[Plans page] Clear select plans'
+  'CLEAR_SELECT' = '[Plans page] Clear select plans',
 }
 
 export class Load implements Action {
@@ -84,7 +84,8 @@ export class AddPlanFail implements Action {
 export class AddPlanSubject implements Action {
   readonly type = PlansActionTypes.ADD_PLAN_SUBJECT;
 
-  constructor(readonly payload: {planId: number, subject: PlanSubject}) {}
+  constructor(readonly payload: { planId: number; subject: PlanSubject }) {
+  }
 }
 
 export class AddPlanSubjectSuccess implements Action {
@@ -102,7 +103,14 @@ export class AddPlanSubjectFail implements Action {
 export class UpdatePlanSubject implements Action {
   readonly type = PlansActionTypes.UPDATE_PLAN_SUBJECT;
 
-  constructor(readonly payload: {planId: number, subjectId: number, subject: PlanSubject}) {}
+  constructor(
+    readonly payload: {
+      planId: number;
+      subjectId: number;
+      subject: PlanSubject;
+    },
+  ) {
+  }
 }
 
 export class UpdatePlanSubjectSuccess implements Action {

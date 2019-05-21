@@ -15,9 +15,9 @@ export class AppEffects {
     switchMap(() =>
       this.appService.getGroups().pipe(
         map(groups => new appActions.LoadGroupsSuccess(groups)),
-        catchError(err => of(new appActions.LoadGroupsFail()))
-      )
-    )
+        catchError(err => of(new appActions.LoadGroupsFail())),
+      ),
+    ),
   );
 
   @Effect()
@@ -26,9 +26,9 @@ export class AppEffects {
     switchMap(() =>
       this.appService.getDepartments().pipe(
         map(departments => new appActions.LoadDepartmentsSuccess(departments)),
-        catchError(err => of(new appActions.LoadDepartmentsFail()))
-      )
-    )
+        catchError(err => of(new appActions.LoadDepartmentsFail())),
+      ),
+    ),
   );
 
   @Effect()
@@ -37,9 +37,9 @@ export class AppEffects {
     switchMap(() =>
       this.appService.getTeachers().pipe(
         map(teachers => new appActions.LoadTeachersSuccess(teachers)),
-        catchError(err => of(new appActions.LoadTeachersFail()))
-      )
-    )
+        catchError(err => of(new appActions.LoadTeachersFail())),
+      ),
+    ),
   );
 
   @Effect()
@@ -48,9 +48,9 @@ export class AppEffects {
     switchMap(() =>
       this.appService.getStudents().pipe(
         map(students => new appActions.LoadStudentsSuccess(students)),
-        catchError(err => of(new appActions.LoadStudentsFail()))
-      )
-    )
+        catchError(err => of(new appActions.LoadStudentsFail())),
+      ),
+    ),
   );
 
   @Effect()
@@ -59,8 +59,8 @@ export class AppEffects {
     switchMap(() =>
       this.appService.getSubjects().pipe(
         map(subjects => new appActions.LoadSubjectsSuccess(subjects)),
-        catchError(err => of(new appActions.LoadSubjectsFail()))
-      )
-    )
+        catchError(err => of(new appActions.LoadSubjectsFail())),
+      ),
+    ),
   );
 }

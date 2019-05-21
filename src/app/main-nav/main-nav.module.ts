@@ -1,10 +1,10 @@
-import {LayoutModule} from '@angular/cdk/layout';
-import {CommonModule} from '@angular/common';
-import {NgModule} from '@angular/core';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
+import { LayoutModule } from '@angular/cdk/layout';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import {
   MatBadgeModule,
   MatButtonModule,
@@ -22,36 +22,36 @@ import {
   MatSidenavModule,
   MatStepperModule,
   MatTableModule,
-  MatToolbarModule
+  MatToolbarModule,
 } from '@angular/material';
 
-import {MainNavComponent} from './main-nav.component';
-import {MainNavRoutingModule} from './main-nav.routing.module';
-import {SearchSelectModule} from '../components/common/search-select/search-select.module';
-import {FiltersModule} from '../components/common/filters/filters.module';
-import {DataTableModule} from '../components/common/data-table/data-table.module';
-import {EditorModule} from '../components/common/editor/editor.module';
-import {PreloadingSpinnerModule} from '../components/common/preloading-spinner/preloading-spinner.module';
+import { MainNavComponent } from './main-nav.component';
+import { MainNavRoutingModule } from './main-nav.routing.module';
+import { SearchSelectModule } from '../components/common/search-select/search-select.module';
+import { FiltersModule } from '../components/common/filters/filters.module';
+import { DataTableModule } from '../components/common/data-table/data-table.module';
+import { EditorModule } from '../components/common/editor/editor.module';
+import { PreloadingSpinnerModule } from '../components/common/preloading-spinner/preloading-spinner.module';
 import {
-  AuthComponent,
-  MissesFiltersComponent,
-  NotesFiltersComponent,
-  PlanFiltersComponent,
-  HeaderMenuComponent,
-  MissesComponent,
-  NotesComponent,
-  PlansComponent,
-  AddPlansComponent,
-  AddNotesComponent,
   AddMissesComponent,
-  ChangePlansComponent,
-  ChangeNotesComponent,
+  AddNotesComponent,
+  AddPlansComponent,
+  AuthComponent,
   ChangeMissesComponent,
+  ChangeNotesComponent,
+  ChangePlansComponent,
+  DialogPopupComponent,
   EditMissesComponent,
   EditNotesComponent,
   EditPlansComponent,
-  DialogPopupComponent,
-  JournalComponent
+  HeaderMenuComponent,
+  JournalComponent,
+  MissesComponent,
+  MissesFiltersComponent,
+  NotesComponent,
+  NotesFiltersComponent,
+  PlanFiltersComponent,
+  PlansComponent,
 } from '../components';
 
 const components = [
@@ -108,10 +108,10 @@ const components = [
     EditorModule,
     PreloadingSpinnerModule,
     MatStepperModule,
-    MatTableModule
+    MatTableModule,
   ],
   exports: [MainNavComponent],
-  entryComponents: [DialogPopupComponent]
+  entryComponents: [DialogPopupComponent],
 })
 export class MainNavModule {
 }

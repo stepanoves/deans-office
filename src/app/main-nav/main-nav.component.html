@@ -1,6 +1,5 @@
 <script src="../../../../Users/anduser/AppData/Local/Temp/sign-up-dialog.component.ts"></script>
 <mat-sidenav-container>
-
   <mat-sidenav
     #drawer
     class="sidenav_left"
@@ -24,13 +23,15 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        >
+      >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
 
-      <app-header-menu class="header-menu" *ngIf="headerMenuVisible$ | async"></app-header-menu>
+      <app-header-menu
+        class="header-menu"
+        *ngIf="headerMenuVisible$ | async"
+      ></app-header-menu>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
-
 </mat-sidenav-container>

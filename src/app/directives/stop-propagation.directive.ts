@@ -1,10 +1,10 @@
-import { Directive, HostListener } from "@angular/core";
+import { Directive, HostListener } from '@angular/core';
 
 @Directive({
-  selector: "[stopPropagation]"
+  selector: '[stopPropagation]',
 })
 export class StopPropagationDirective {
-  @HostListener("keydown", ["$event"])
+  @HostListener('keydown', ['$event'])
   keyDown(event) {
     if (event.keyCode === 32) event.stopPropagation();
   }

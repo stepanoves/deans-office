@@ -11,10 +11,8 @@
       matInput
       formControlName="password"
     />
-    <mat-hint *ngIf="isFieldInvalid('password')"
-      >Поле обязательно</mat-hint
-    >
-    <mat-hint *ngIf="(authError$ | async)">Неверно введены данные</mat-hint>
+    <mat-hint *ngIf="isFieldInvalid('password')">Поле обязательно</mat-hint>
+    <mat-hint *ngIf="authError$ | async">Неверно введены данные</mat-hint>
   </mat-form-field>
 
   <button mat-button color="primary" [disabled]="authForm.invalid">

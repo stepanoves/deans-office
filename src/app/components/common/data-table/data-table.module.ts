@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatCheckboxModule, MatPaginatorModule, MatSortModule, MatTableModule} from '@angular/material';
-import {HttpClientModule} from '@angular/common/http';
-import {PreloadingSpinnerModule} from '../preloading-spinner/preloading-spinner.module';
-import {DataTableComponent} from './data-table.component';
-import {CdkTableModule} from '@angular/cdk/table';
+import { MatCheckboxModule, MatPaginatorModule, MatSortModule, MatTableModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { PreloadingSpinnerModule } from '../preloading-spinner/preloading-spinner.module';
+import { DataTableComponent } from './data-table.component';
+import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
   declarations: [DataTableComponent],
@@ -16,8 +16,9 @@ import {CdkTableModule} from '@angular/cdk/table';
     MatSortModule,
     MatCheckboxModule,
     HttpClientModule,
-    PreloadingSpinnerModule
+    PreloadingSpinnerModule,
   ],
-  exports: [DataTableComponent]
+  exports: [DataTableComponent],
 })
-export class DataTableModule { }
+export class DataTableModule {
+}

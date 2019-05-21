@@ -30,7 +30,6 @@ export class ChangeVisible implements Action {
   constructor(readonly payload: boolean) {}
 }
 
-
 export class LoadGroups implements Action {
   readonly type = AppActionTypes.LOAD_GROUPS;
 

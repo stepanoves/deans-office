@@ -1,21 +1,20 @@
-import {ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatTableDataSource} from '@angular/material';
-import {SelectionModel} from '@angular/cdk/collections';
-import {Store} from '@ngrx/store';
-import {Observable, Subject} from 'rxjs';
-import {takeUntil} from 'rxjs/operators';
+import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { SelectionModel } from '@angular/cdk/collections';
+import { Store } from '@ngrx/store';
+import { Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
-import {Column, ModelType} from '../../../constants/constants';
-import {State} from '../../../state/state';
+import { Column, ModelType } from '../../../constants/constants';
+import { State } from '../../../state/state';
 
 @Component({
   selector: 'app-data-table',
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataTableComponent implements OnInit, OnDestroy {
-
   @Input() cols: Column[];
   @Input() actionType: any;
   @Input() stream$: Observable<any>;
@@ -24,13 +23,13 @@ export class DataTableComponent implements OnInit, OnDestroy {
 
   private readonly destroy$ = new Subject<boolean>();
 
-  public dataSource = new MatTableDataSource<ModelType> ();
+  public dataSource = new MatTableDataSource<ModelType>();
   public selection = new SelectionModel<ModelType>(true, []);
 
   constructor(private store: Store<State>) {}
 
   public ngOnInit(): void {
-    this.cols = [{ key: 'select', header: null, cell: null}, ...this.cols];
+    this.cols = [{ key: 'select', header: null, cell: null }, ...this.cols];
     this.dataSource.paginator = this.matPaginator;
     this.store.dispatch(new this.actionType.Load());
 
@@ -64,7 +63,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
 
   public updateSelect(): void {
     this.store.dispatch(
-      new this.actionType.UpdateSelect(this.selection.selected)
+      new this.actionType.UpdateSelect(this.selection.selected),
     );
   }
 }

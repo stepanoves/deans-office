@@ -1,14 +1,8 @@
-<button
-  mat-button
-  color="primary"
-  class="show-btn"
-  (click)="show()"
->
-  {{isOpen ? 'Скрыть фильтры' : 'Показать фильтры' }}
+<button (click)="show()" class="show-btn" color="primary" mat-button>
+  {{ isOpen ? 'Скрыть фильтры' : 'Показать фильтры' }}
 </button>
-<div [@openClose]="isOpen ? 'open' : 'closed'"  class="filters">
-  <ng-content>
-  </ng-content>
+<div [@openClose]="isOpen ? 'open' : 'closed'" class="filters">
+  <ng-content></ng-content>
   <button
     mat-raised-button
     color="primary"

@@ -8,9 +8,8 @@ describe('ChangeMissesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChangeMissesComponent ]
-    })
-    .compileComponents();
+      declarations: [ChangeMissesComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

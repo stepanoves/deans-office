@@ -16,7 +16,7 @@ export enum NotesActionTypes {
   'LOAD_FAIL' = '[Notes page] Load fail misses',
   'UPDATE_SELECT' = '[Notes page] Update select misses',
   'CLEAR_SELECT' = '[Notes page] Clear select misses',
-  'UPDATE_FILTERS' = '[Notes page] Update filters misses'
+  'UPDATE_FILTERS' = '[Notes page] Update filters misses',
 }
 
 export class Load implements Action {

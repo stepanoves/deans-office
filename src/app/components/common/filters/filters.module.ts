@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FiltersComponent} from './filters.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatButtonModule, MatExpansionModule} from '@angular/material';
+import { FiltersComponent } from './filters.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule, MatExpansionModule } from '@angular/material';
 
 @NgModule({
   declarations: [FiltersComponent],
@@ -13,8 +13,8 @@ import {MatButtonModule, MatExpansionModule} from '@angular/material';
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatExpansionModule
+    MatExpansionModule,
   ],
-  exports: [FiltersComponent]
+  exports: [FiltersComponent],
 })
 export class FiltersModule {}

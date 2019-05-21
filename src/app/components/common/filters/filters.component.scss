@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.show-btn {
+  text-align: center;
+  width: 100%;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  .reset-btn {
+    align-items: center;
+  }
+  ::ng-deep {
+    position: fixed;
+    visibility: hidden;
+    background-color: #fafafa;
+    width: 100%;
+    & > * {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+    }
+  }
+}
+

@@ -1,0 +1,95 @@
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+:host {
+  .full-width-table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+
+
+    &__content {
+      flex-basis: 69em;
+    }
+
+    &__plans-item {
+      flex-basis: 15em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      &__cards {
+        overflow-y: auto;
+        height: 300px;
+      }
+
+      &__card {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        box-shadow: none;
+        border: solid 1px #c7c6ca;
+        margin: 3px 0 3px;
+      }
+
+      &__info {
+        font-size: 12px;
+      }
+
+      &__actions {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-right: 5px;
+      }
+
+      &__info p {
+        margin: 0;
+      }
+
+      &__actions mat-icon {
+        font-size: 14px;
+        color: #888888;
+        width: 0;
+        height: 0;
+      }
+      &__actions mat-icon:hover {
+        color: #000;
+        cursor: pointer;
+      }
+
+      mat-accordion {
+
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+    }
+  }
+}

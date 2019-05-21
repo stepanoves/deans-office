@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "subject": {
+      "id": 1,
+      "name": "subject name 1"
+    },
+    "teacher": {
+      "id": 1,
+      "name": "teacher name 1",
+      "rank": "teacher rank 1",
+      "hour_cost": 10
+    },
+    "hours": 10,
+
+    "type": "экзамен",
+    "date": "19.10.2019"
+  },
+  {
+    "id": 2,
+    "subject": {
+      "id": 2,
+      "name": "subject name 2"
+    },
+    "teacher": {
+      "id": 2,
+      "name": "teacher name 2",
+      "rank": "teacher rank 2",
+      "hour_cost": 10
+    },
+    "hours": 10,
+
+    "type": "экзамен",
+    "date": "19.10.2019"
+  },
+  {
+    "id": 3,
+    "subject": {
+      "id": 3,
+      "name": "subject name 3"
+    },
+    "teacher": {
+      "id": 1,
+      "name": "teacher name 3",
+      "rank": "teacher rank 3",
+      "hour_cost": 10
+    },
+    "hours": 10,
+    "type": "экзамен",
+    "date": "19.10.2019"
+  }
+]

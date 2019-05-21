@@ -1,0 +1,72 @@
+:host > *{
+  height: 100%;
+}
+.container {
+  &__plans {
+    display: flex;
+    justify-content: space-between;
+
+    &__search {
+      flex-basis: 55em;
+    }
+    &__search form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__cards {
+      flex-basis: 25em;
+      overflow-y: auto;
+      height: 300px;
+    }
+
+    &__card {
+      display: flex;
+      justify-content: space-between;
+      height: 60px;
+      box-shadow: none;
+      border: solid 1px #c7c6ca;
+      margin: 3px 0 3px;
+    }
+
+    &__info {
+      font-size: 12px;
+    }
+
+    &__actions {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-right: 5px;
+    }
+
+    &__info p {
+      margin: 0;
+    }
+  }
+
+  &__subjects {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  &__subjects mat-radio-group{
+    display: flex;
+    flex-direction: column;
+  }
+  &__subjects mat-radio-button{
+    padding: 10px;
+  }
+
+  &__marks {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__marks table {
+    width: 40em;
+    box-shadow: none;
+    border: 1px solid #e6f4ff;
+  }
+}

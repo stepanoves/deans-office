@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "group": {
+      "id": 1,
+      "name": "group name 1"
+    },
+    "semester": "осенний",
+    "year": 2018
+  },
+  {
+    "id": 2,
+    "group": {
+      "id": 2,
+      "name": "group name 2"
+    },
+    "semester": "осенний",
+    "year": 2018
+  },
+  {
+    "id": 3,
+    "group": {
+      "id": 3,
+      "name": "group name 3"
+    },
+    "semester": "осенний",
+    "year": 2018
+  },
+  {
+    "id": 3,
+    "group": {
+      "id": 3,
+      "name": "group name 3"
+    },
+    "semester": "осенний",
+    "year": 2018
+  },
+  {
+    "id": 3,
+    "group": {
+      "id": 3,
+      "name": "group name 3"
+    },
+    "semester": "осенний",
+    "year": 2018
+  },
+  {
+    "id": 3,
+    "group": {
+      "id": 3,
+      "name": "group name 3"
+    },
+    "semester": "осенний",
+    "year": 2018
+  },
+  {
+    "id": 3,
+    "group": {
+      "id": 3,
+      "name": "group name 3"
+    },
+    "semester": "осенний",
+    "year": 2018
+  }
+]

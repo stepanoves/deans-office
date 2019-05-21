@@ -1,0 +1,63 @@
+<div id="print">
+  <div class="header">
+    <p>
+      <strong
+        >Оплата в системе ЕРИП - отработка занятий, фамилия, имя, отчество
+        студента</strong
+      ><br />Учреждение образования «Витебский государственный технологический
+      уничерситет», Московский пр-т, 72, 210035, г. Витебск
+    </p>
+  </div>
+  <table class="print-misses-table">
+    <tr>
+      <td *ngFor="let header of tableHeaders">{{ header }}</td>
+    </tr>
+    <tr *ngFor="let missItem of (selected$ | async)">
+      <td>
+        {{ missItem.miss_type }}
+      </td>
+
+      <td>
+        {{ missItem.teacher.name }}
+      </td>
+
+      <td>
+        {{ missItem.teacher.rank }}
+      </td>
+
+      <td>
+        {{ missItem.subject.name }}
+      </td>
+
+      <td>
+        {{ missItem.date }}
+      </td>
+
+      <td>
+        {{ missItem.quantity_hours }}
+      </td>
+
+      <td>
+        {{ missItem.hour_cost }}
+      </td>
+
+      <td>
+        {{ missItem.hour_cost * missItem.quantity_hours }}
+      </td>
+    </tr>
+  </table>
+</div>
+<button
+  mat-raised-button
+  color="primary"
+  class="print-btn"
+  [printStyle]="{
+    div: {'margin-left': '30px'},
+    table: {'border-collapse': 'collapse'},
+    td: { border: '1px solid black', 'text-align': 'center' }
+  }"
+  printSectionId="print"
+  ngxPrint
+>
+  Вывести на печать
+</button>

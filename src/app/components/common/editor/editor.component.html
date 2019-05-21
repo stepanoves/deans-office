@@ -1,0 +1,28 @@
+<div class="container">
+  <form [formGroup]="editorForm">
+    <div class="form-inputs">
+      <ng-content></ng-content>
+    </div>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="isEdit ? editorForm.invalid && isFormChanged : editorForm.invalid"
+      (click)="isEdit ? update() : add()"
+    >
+      {{ isEdit ? 'Изменить' : 'Добавить' }}
+    </button>
+  </form>
+  <div class="for-add-container" *ngIf="isEdit">
+    <ng-container >
+      <div class="card-container">
+        <mat-card *ngFor="let item of (selected$ | async); let i = index" [attr.data-index]="i" class="card">
+          <div class="info">
+            <p *ngFor="let info of briefInfo">{{ info['label'] }}: {{getPropertyValue(info.propName, item)}}</p>
+          </div>
+          <a (click)="editItem(item)"><mat-icon>edit</mat-icon></a>
+        </mat-card>
+      </div>
+    </ng-container>
+  </div>
+</div>
+

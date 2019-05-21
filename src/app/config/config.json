@@ -1,0 +1,34 @@
+{
+  "API": {
+    "GET_MISSES": "../../assets/mocks/GET_MISSES.json",
+    "POST_MISSES": "",
+    "UPDATE_MISSES": "",
+    "DELETE_MISSES": "",
+
+    "GET_NOTES": "../../assets/mocks/GET_NOTES.json",
+    "POST_NOTES": "",
+    "UPDATE_NOTES": "",
+    "DELETE_NOTES": "",
+
+    "GET_JOURNAL": "../../assets/mocks/GET_JOURNAL.json",
+    "UPDATE_JOURNAL": "",
+
+    "GET_GROUP_PLANS": "../../assets/mocks/GET_GROUP_PLANS.json",
+    "POST_GROUP_PLANS": "",
+    "UPDATE_GROUP_PLANS": "",
+    "DELETE_GROUP_PLANS": "",
+
+    "GET_PLAN_SUBJECTS": "../../assets/mocks/GET_PLAN_SUBJECTS.json",
+    "POST_PLAN_SUBJECTS": "",
+    "UPDATE_PLAN_SUBJECTS": "",
+    "DELETE_PLAN_SUBJECTS": "",
+
+    "GET_ALL": {
+      "GROUP": "../../assets/mocks/GET_GROUPS.json",
+      "DEPARTMENT": "../../assets/mocks/GET_DEPARTMENTS.json",
+      "TEACHERS": "../../assets/mocks/GET_TEACHERS.json",
+      "STUDENTS": "../../assets/mocks/GET_STUDENTS.json",
+      "SUBJECTS": "../../assets/mocks/GET_SUBJECTS.json"
+    }
+  }
+}

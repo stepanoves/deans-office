@@ -1,0 +1,17 @@
+:host {
+  .data-table {
+    box-shadow: none;
+  }
+
+  .data-table {
+    white-space: nowrap;
+
+    &__select {
+      padding: 15px;
+    }
+    &__content {
+      padding: 0 15px 0 0;
+    }
+  }
+}
+

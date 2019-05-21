@@ -1,0 +1,54 @@
+<app-filters [filters]="filters">
+  <form [formGroup]="filters">
+    <app-search-select
+      (click)="dispatchLoadAction('LOAD_DEPARTMENTS')"
+      [dataStream]="departments$"
+      formControlName="department"
+      placeholder="Кафедра"
+    ></app-search-select>
+
+    <app-search-select
+      (click)="dispatchLoadAction('LOAD_TEACHERS')"
+      [dataStream]="teachers$"
+      formControlName="teacher"
+      placeholder="Преподаватель"
+    ></app-search-select>
+
+    <app-search-select
+      (click)="dispatchLoadAction('LOAD_GROUPS')"
+      [dataStream]="groups$"
+      [dependency]="filters.get('student')"
+      formControlName="group"
+      placeholder="Группы"
+    ></app-search-select>
+
+    <app-search-select
+      (click)="dispatchLoadAction('LOAD_STUDENTS')"
+      [dataStream]="students$"
+      formControlName="student"
+      placeholder="Студенты"
+    ></app-search-select>
+
+    <mat-form-field>
+      <input
+        matInput
+        [matDatepicker]="from"
+        placeholder="Период с"
+        formControlName="dateFrom"
+      />
+      <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+      <mat-datepicker #from></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        [matDatepicker]="to"
+        placeholder="Период по"
+        formControlName="dateTo"
+      />
+      <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+      <mat-datepicker #to></mat-datepicker>
+    </mat-form-field>
+  </form>
+</app-filters>

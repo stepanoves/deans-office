@@ -1,0 +1,7 @@
+<app-notes-filters></app-notes-filters>
+<app-data-table
+  class="table"
+  [stream$]="notes$"
+  [cols]="columns"
+  [actionType]="notesActions"
+></app-data-table>

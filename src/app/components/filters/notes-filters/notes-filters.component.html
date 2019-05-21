@@ -1,0 +1,17 @@
+<app-filters [filters]="filters">
+  <form [formGroup]="filters" class="filters">
+    <app-search-select
+      (click)="dispatchLoadAction('LOAD_GROUPS')"
+      [dataStream]="groups$"
+      formControlName="group"
+      placeholder="Группы"
+    ></app-search-select>
+
+    <app-search-select
+      (click)="dispatchLoadAction('LOAD_STUDENTS')"
+      [dataStream]="students$"
+      formControlName="student"
+      placeholder="Студенты"
+    ></app-search-select>
+  </form>
+</app-filters>

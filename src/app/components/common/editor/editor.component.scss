@@ -1,0 +1,79 @@
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+:host {
+  display: block;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    flex-basis: 35em;
+    height: 500px;
+
+    .container > * {
+      margin: 15px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-basis: 35em;
+    }
+    .form-inputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 400px;
+      overflow-y: scroll;
+    }
+    .for-add-container {
+      display: flex;
+      flex-basis: 25em;
+      flex-direction: column;
+      justify-content: space-between;
+      .card-container {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        overflow-y: auto;
+        .card {
+          display: flex;
+          justify-content: space-between;
+          background-color: #daccf4;
+          box-shadow: none;
+          margin: 1px;
+          .info {
+            display: flex;
+            flex-direction: column;
+
+            p {
+              margin: 0;
+              font-size: small;
+            }
+          }
+          a {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

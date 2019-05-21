@@ -1,0 +1,51 @@
+<app-editor
+  [isEdit]="isEdit"
+  [editAction]="editAction"
+  [addAction]="addAction"
+  [editorForm]="editPlansForm"
+  [selected$]="selected$"
+  [preDispatch]="preDispatch"
+  [briefInfo]="briefInfo"
+  [formGroup]="editPlansForm"
+>
+  <app-search-select
+    [dataStream]="subjects$"
+    [required]="true"
+    formControlName="subject"
+    placeholder="Дисциплина"
+  ></app-search-select>
+
+  <app-search-select
+    [dataStream]="teachers$"
+    [required]="true"
+    formControlName="teacher"
+    placeholder="Преподаватель"
+  ></app-search-select>
+
+  <mat-form-field>
+    <mat-select placeholder="Тип" formControlName="type">
+      <mat-option [value]="'экзамен'">Экзамен</mat-option>
+      <mat-option [value]="'зачет'">Зачет</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Количество часов"
+      formControlName="hours"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="date"
+      placeholder="Дата проведения"
+      formControlName="date"
+    />
+    <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+    <mat-datepicker #date></mat-datepicker>
+  </mat-form-field>
+
+</app-editor>

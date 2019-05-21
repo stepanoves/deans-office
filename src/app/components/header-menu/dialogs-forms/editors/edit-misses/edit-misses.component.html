@@ -1,0 +1,92 @@
+<app-editor
+  [isEdit]="isEdit"
+  [editAction]="editAction"
+  [addAction]="addAction"
+  [editorForm]="editMissesForm"
+  [selected$]="selected$"
+  [preDispatch]="preDispatch"
+  [briefInfo]="briefInfo"
+  [formGroup]="editMissesForm"
+>
+  <app-search-select
+    [dataStream]="departments$"
+    [required]="true"
+    formControlName="department"
+    placeholder="Кафедра"
+  ></app-search-select>
+
+  <app-search-select
+    [dataStream]="groups$"
+    [required]="true"
+    [dependency]="editMissesForm.get('student')"
+    formControlName="group"
+    placeholder="Группы"
+  ></app-search-select>
+
+  <app-search-select
+    [dataStream]="students$"
+    [required]="true"
+    formControlName="student"
+    placeholder="Студенты"
+  ></app-search-select>
+
+  <app-search-select
+    [dataStream]="subjects$"
+    [required]="true"
+    formControlName="subject"
+    placeholder="Дисциплина"
+  ></app-search-select>
+
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="date"
+      placeholder="Дата пропуска"
+      formControlName="date"
+    />
+    <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+    <mat-datepicker #date></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Вид учебной нагрузки" formControlName="type">
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{ food.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <app-search-select
+    [dataStream]="teachers$"
+    formControlName="teacher"
+    placeholder="Преподаватель"
+  ></app-search-select>
+
+  <mat-form-field>
+    <input
+      matInput
+      type="text"
+      placeholder="Должность, звание"
+      formControlName="teacherRank"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      type="text"
+      placeholder="Кол-во часов"
+      matInput
+      formControlName="hours"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      type="text"
+      placeholder="Стоимость одного часа (в рублях)"
+      matInput
+      formControlName="hourCost"
+    />
+  </mat-form-field>
+</app-editor>
+

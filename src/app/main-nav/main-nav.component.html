@@ -1,0 +1,35 @@
+<mat-sidenav-container>
+
+  <mat-sidenav
+    #drawer
+    class="sidenav_left"
+    fixedInViewport="true"
+    fxShow="true"
+  >
+    <mat-toolbar>Меню</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/misses']">Пропуски</a>
+      <a mat-list-item [routerLink]="['/notes']">Справки</a>
+      <a mat-list-item [routerLink]="['/plans']">Планы</a>
+      <a mat-list-item [routerLink]="['/journal']">Ведомости</a>
+      <a mat-list-item>Выход</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidenav-content">
+    <mat-toolbar class="toolbar" color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <app-header-menu class="header-menu" *ngIf="headerMenuVisible$ | async"></app-header-menu>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "group": {
+      "id": 1,
+      "name": "group name 1"
+    },
+    "student": {
+      "id": 1,
+      "name": "student name 1",
+      "record_number": "2222"
+    },
+    "dateFrom": "10.10.2010",
+    "dateTo": "15.10.2010",
+    "cause": "нет"
+  },
+  {
+    "id": 2,
+    "group": {
+      "id": 2,
+      "name": "group name 2"
+    },
+    "student": {
+      "id": 2,
+      "name": "student name 2",
+      "record_number": "2222"
+    },
+    "dateFrom": "10.10.2010",
+    "dateTo": "15.10.2010",
+    "cause": "нет"
+  },
+  {
+    "id": 3,
+    "group": {
+      "id": 3,
+      "name": "group name 3"
+    },
+    "student": {
+      "id": 3,
+      "name": "student name 3",
+      "record_number": "2222"
+    },
+    "dateFrom": "10.10.2010",
+    "dateTo": "15.10.2010",
+    "cause": "нет"
+  },
+  {
+    "id": 4,
+    "group": {
+      "id": 4,
+      "name": "group name 4"
+    },
+    "student": {
+      "id": 4,
+      "name": "student name 4",
+      "record_number": "2222"
+    },
+    "dateFrom": "10.10.2010",
+    "dateTo": "15.10.2010",
+    "cause": "нет"
+  },
+  {
+    "id": 5,
+    "group": {
+      "id": 5,
+      "name": "group name 5"
+    },
+    "student": {
+      "id": 5,
+      "name": "student name 5",
+      "record_number": "2222"
+    },
+    "dateFrom": "10.10.2010",
+    "dateTo": "15.10.2010",
+    "cause": "нет"
+  },
+  {
+    "id": 6,
+    "group": {
+      "id": 6,
+      "name": "group name 6"
+    },
+    "student": {
+      "id": 6,
+      "name": "student name 6",
+      "record_number": "2222"
+    },
+    "dateFrom": "10.10.2010",
+    "dateTo": "15.10.2010",
+    "cause": "нет"
+  }
+]

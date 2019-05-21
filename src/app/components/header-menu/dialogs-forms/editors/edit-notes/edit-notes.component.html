@@ -1,0 +1,55 @@
+<app-editor
+  [isEdit]="isEdit"
+  [editAction]="editAction"
+  [addAction]="addAction"
+  [editorForm]="editNotesGroup"
+  [selected$]="selected$"
+  [preDispatch]="preDispatch"
+  [briefInfo]="briefInfo"
+  [formGroup]="editNotesGroup"
+>
+  <app-search-select
+    [dataStream]="groups$"
+    [dependency]="editNotesGroup.get('student')"
+    [required]="true"
+    formControlName="group"
+    placeholder="Группы"
+  ></app-search-select>
+
+  <app-search-select
+    [dataStream]="students$"
+    [required]="true"
+    formControlName="student"
+    placeholder="Студенты"
+  ></app-search-select>
+
+  <mat-form-field>
+    <mat-select placeholder="Причина пропуска" formControlName="cause">
+      <mat-option *ngFor="let cause of causes" [value]="cause">
+        {{ cause }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="from"
+      placeholder="Период с"
+      formControlName="dateFrom"
+    />
+    <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+    <mat-datepicker #from></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="to"
+      placeholder="Период по"
+      formControlName="dateTo"
+    />
+    <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+    <mat-datepicker #to></mat-datepicker>
+  </mat-form-field>
+</app-editor>

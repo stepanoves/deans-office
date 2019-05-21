@@ -1,0 +1,26 @@
+<app-filters [filters]="filters">
+  <form [formGroup]="filters" class="filters">
+    <app-search-select
+      (click)="dispatchLoadAction('LOAD_GROUPS')"
+      [dataStream]="groups$"
+      formControlName="group"
+      placeholder="Группа"
+    ></app-search-select>
+
+    <mat-form-field>
+      <mat-select placeholder="Тип" formControlName="semester">
+        <mat-option value="option">Осенний</mat-option>
+        <mat-option value="option">Зимний</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Год"
+        formControlName="year"
+      />
+    </mat-form-field>
+
+  </form>
+</app-filters>

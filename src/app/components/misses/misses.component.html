@@ -1,0 +1,7 @@
+<app-misses-filters></app-misses-filters>
+<app-data-table
+  class="table"
+  [stream$]="misses$"
+  [cols]="columns"
+  [actionType]="missesActions"
+></app-data-table>

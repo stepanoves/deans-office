@@ -1,0 +1,39 @@
+<mat-form-field (click)="setFocus()">
+  <mat-select
+    placeholder="{{ placeholder }}"
+    class="search-select"
+    [formControl]="select"
+  >
+    <mat-option (click)="optionSelect(filter.value)">
+      <input
+        #search
+        type="text"
+        placeholder="Поиск"
+        matInput
+        stopPropagation
+        [formControl]="filter"
+      />
+    </mat-option>
+    <app-preloading-spinner [dataStream]="dataStream$"></app-preloading-spinner>
+    <mat-option
+      *ngFor="
+        let option of (dataStream$
+          | async
+          | dataFilter: filter.value
+          | slice: currentPageIndex:currentPageIndex + pageSize)
+      "
+      [value]="option.id"
+      (click)="optionSelect(option)"
+    >
+      {{ option.name }}
+    </mat-option>
+    <mat-paginator
+      [length]="(dataStream$ | async)?.length"
+      [pageSize]="pageSize"
+      [hidePageSize]="true"
+      (page)="onPaginateChange($event)"
+    >
+      >
+    </mat-paginator>
+  </mat-select>
+</mat-form-field>

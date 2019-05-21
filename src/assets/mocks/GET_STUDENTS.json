@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "student name 1",
+        "record_number": "1111"
+    },
+    {
+        "id": 2,
+        "name": "student name 2",
+        "record_number": "2222"
+    },
+    {
+        "id": 3,
+        "name": "student name 3",
+        "record_number": "3333"
+    }
+]

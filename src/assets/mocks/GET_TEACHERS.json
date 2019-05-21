@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "teacher name 1",
+    "rank": "teacher rank 1",
+    "hour_cost": 10
+  },
+  {
+    "id": 2,
+    "name": "teacher name 2",
+    "rank": "teacher rank 2",
+    "hour_cost": 10
+  },
+  {
+    "id": 3,
+    "name": "teacher name 3",
+    "rank": "teacher rank 3",
+    "hour_cost": 10
+  }
+]

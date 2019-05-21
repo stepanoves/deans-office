@@ -1,0 +1,8 @@
+:host {
+  .table {
+    ::ng-deep .data-table {
+      display: block;
+      overflow-x: scroll;
+    }
+  }
+}

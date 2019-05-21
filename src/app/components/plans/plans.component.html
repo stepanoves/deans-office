@@ -1,0 +1,65 @@
+<app-plan-filters></app-plan-filters>
+<div class="container">
+  <div class="container__content">
+    <app-data-table
+      class="full-width-table"
+      [stream$]="planSubjects$"
+      [actionType]="planAction"
+      [cols]="columns"
+    ></app-data-table>
+  </div>
+  <div class="container__plans-item">
+    <div class="container__plans-item__add">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Добавить план
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+
+          <form [formGroup]="addPlanForm" class="filters">
+            <app-search-select
+              (click)="dispatchLoadAction('LOAD_GROUPS')"
+              [dataStream]="groups$"
+              formControlName="group"
+              placeholder="Группа"
+            ></app-search-select>
+
+            <mat-form-field>
+              <mat-select placeholder="Семестр" formControlName="semester">
+                <mat-option [value]="'осеннний'">Осенний</mat-option>
+                <mat-option [value]="'зимний'">Зимний</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Год"
+                formControlName="year"
+              />
+            </mat-form-field>
+            <button mat-flat-button color="primary">Добавить</button>
+          </form>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+
+    <div class="container__plans-item__cards">
+      <mat-card *ngFor="let item of (groupPlans$ | async); let i = index" [attr.data-index]="i" class="container__plans-item__card">
+        <div class="container__plans-item__info">
+          <p>{{ item.group.name }}</p>
+          <p>{{ item.semester }}</p>
+          <p>{{ item.year }}</p>
+        </div>
+        <div class="container__plans-item__actions">
+          <a><mat-icon>close</mat-icon></a>
+          <a><mat-icon>edit</mat-icon></a>
+        </div>
+
+      </mat-card>
+    </div>
+  </div>
+</div>

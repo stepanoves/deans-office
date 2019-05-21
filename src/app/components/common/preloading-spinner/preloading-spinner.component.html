@@ -1,0 +1,4 @@
+<div class="loading-await" *ngIf="(dataStream$ | async)?.length === 0">
+  <mat-hint>Закрузка данных</mat-hint>
+  <mat-spinner [diameter]="20"></mat-spinner>
+</div>

@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+:host > * {
+  width: 100%;
+}
+
+::ng-deep .mat-select-panel {
+  max-height: 80vh !important;
+}
+
